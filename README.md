@@ -1,6 +1,6 @@
 # Dyno Item Size
 
-This is a simple untility to calculate the size of an item as [DynamoDB]() would. The goal of this project is to be accruate within a byte so that you can make optimized requests to DynamoDB.
+This is a simple utility to calculate the size of an item as [DynamoDB](https://aws.amazon.com/documentation/dynamodb/) would. The goal of this project is to be accurate within a byte so that you can make optimized requests to DynamoDB.
 
 ## Usage
 
@@ -13,7 +13,7 @@ var item = {
 };
 var size = dynoItemSize(item);
 console.log(size);
-// => 33
+// => 31
 ```
 
 ## API
@@ -31,3 +31,10 @@ Takes an object like the one shown in usage and returns the read capacity cost.
 ### `dynoItemSize.write(object)`
 
 Takes an object like the one shown in usage and returns the write capacity cost.
+
+## Resources
+
+This module has been implemented by reading a few resources.
+
+- [Item Size in DdynamoDB from stack overflow](http://stackoverflow.com/questions/8988389/itemsize-in-dynamodb)
+- [Provision Throughput from the AWS DynamoDB docs](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ProvisionedThroughput.html)
