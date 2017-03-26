@@ -22,3 +22,8 @@ module.exports.write = function(record) {
   var size = dynoItemSize(record);
   return Math.ceil(size/1024);
 };
+
+module.exports.storage = function(record) {
+  var size = dynoItemSize(record);
+  return size + 100;
+};
