@@ -30,7 +30,7 @@ module.exports.sizeOfValue = function(value) {
   }
   // Boolean value
   // The size of a null attribute or a Boolean attribute is (length of attribute name) + (1 byte)
-  else if(typeof v === 'boolean') {
+  else if(typeof v === 'boolean' || v === null) {
     s += 1
   }
   // List or Map value
