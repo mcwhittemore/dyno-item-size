@@ -11,7 +11,7 @@ var dynoItemSize = module.exports = function(record) {
   }, 0);
 };
 
-module.exports.sizeOfValue = function(value) {
+var sizeOfValue = module.exports.sizeOfValue = function(v) {
   var s = 0;
   // String value
   // Strings are Unicode with UTF-8 binary encoding. The size of a string is 
@@ -39,7 +39,7 @@ module.exports.sizeOfValue = function(value) {
   // (length of attribute name) + sum (size of nested elements) + (3 bytes) . 
   // The size of an empty List or Map is 
   // (length of attribute name) + (3 bytes).
-  else if (typeof v === 'object' && Array.isArray(v)) {
+  else if (typeof v === 'object') {
     s += 3
     // List value
     // Calulates size of elements by 
