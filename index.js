@@ -52,9 +52,9 @@ module.exports.sizeOfValue = function(value) {
     else {
       s += dynoItemSize(v);
     }
-    // unknown type
-    else s += v.length;
   }
+  // unknown type
+  else s += v.length;
   return s;  
 }
 
