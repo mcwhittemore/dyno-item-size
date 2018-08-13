@@ -24,7 +24,8 @@ var sizeOfValue = module.exports.sizeOfValue = function(v) {
   // Leading and trailing zeroes are trimmed. The size of a number is approximately 
   // (length of attribute name) + (1 byte per two significant digits) + (1 byte).
   else if(typeof v === 'number') {
-    var len = v.toString(2).length;
+    // Convert to binary, remove leading zeros, remove decimal, remove trailing zeros
+    var len = v.toString(2).replace(/^0\.0*|\.|0+$/g, '').length;
     len = len > 38 ? 38 : len;
     s += Math.ceil(len/2) + 1;
   }
