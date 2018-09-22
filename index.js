@@ -40,7 +40,7 @@ var sizeOfValue = module.exports.sizeOfValue = function(v) {
   // (length of attribute name) + sum (size of nested elements) + (3 bytes) . 
   // The size of an empty List or Map is 
   // (length of attribute name) + (3 bytes).
-  else if (typeof v === 'object') {
+  else if (typeof v === 'object' && !(v instanceof Buffer)) {
     s += 3
     // List value
     // Calulates size of elements by 
