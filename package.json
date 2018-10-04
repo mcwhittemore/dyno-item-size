@@ -3,7 +3,7 @@
     "mocha": "^3.1.2"
   },
   "name": "dyno-item-size",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "compute the size of an item the same way dynamodb does",
   "main": "index.js",
   "directories": {
