@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/jmhummel/dyno-item-size/tree/master.svg?style=svg&circle-token=c3dcad6dd3bbd2347fcc8eaaacbdd4dcb1e030c9)](https://circleci.com/gh/jmhummel/dyno-item-size/tree/master)
+
 # Dyno Item Size
 
 This is a simple utility to calculate the size of an item as [DynamoDB](https://aws.amazon.com/documentation/dynamodb/) would. The goal of this project is to be accurate within a byte so that you can make optimized requests to DynamoDB.
