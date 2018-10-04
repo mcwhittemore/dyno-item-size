@@ -1,4 +1,6 @@
+var assert = require('assert');
 var dynoItemSize = require('..');
+var sizeOfValue = dynoItemSize.sizeOfValue;
 
 var items = {
   string: { content: 'string', size: 12 },
@@ -62,5 +64,22 @@ describe('should report back capactiy cost', function() {
     };
     var cap = dynoItemSize.read(item);
     if (cap !== 1) throw new Error(`Expected 1 but got ${cap}`);
+  });
+});
+
+describe('should calculate value sizes', function() {
+  describe('strings', function() {
+    
+    it('empty string', function() {
+      let string = ''
+      let expectedSize = 0;
+      assert.equal(sizeOfValue(string), expectedSize);
+    });
+    
+    it('basic string', function() {
+      let string = 'helloworld';
+      let expectedSize = string.length;
+      assert.equal(sizeOfValue(string), expectedSize);
+    });
   });
 });
