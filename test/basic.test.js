@@ -68,8 +68,7 @@ describe('should report back capactiy cost', function() {
 });
 
 describe('should calculate value sizes', function() {
-  describe('strings', function() {
-    
+  describe('string', function() {
     it('empty string', function() {
       let string = ''
       let expectedSize = 0;
@@ -80,6 +79,52 @@ describe('should calculate value sizes', function() {
       let string = 'helloworld';
       let expectedSize = string.length;
       assert.equal(sizeOfValue(string), expectedSize);
+    });
+    
+    it('unicode string 1', function() {
+      // U+00A9 COPYRIGHT SIGN; see http://codepoints.net/U+00A9
+      let utf16String = '\u00A9';
+      let utf8EncodedString = '\xC2\xA9';
+      let expectedSize = utf8EncodedString.length;
+      assert.equal(sizeOfValue(utf16String), expectedSize);
+    });
+    
+    it('unicode string 2', function() {
+      // U+10001 LINEAR B SYLLABLE B038 E; see http://codepoints.net/U+10001
+      let utf16String = '\uD800\uDC01';
+      let utf8EncodedString = '\xF0\x90\x80\x81';
+      let expectedSize = utf8EncodedString.length;
+      assert.equal(sizeOfValue(utf16String), expectedSize);
+    });
+  });
+  
+  describe('number', function() {
+    it('11', function() {
+      let number = 11;
+      let expectedSize = 2;
+      assert.equal(sizeOfValue(number), expectedSize);
+    });
+    
+    it('basic string', function() {
+      let string = 'helloworld';
+      let expectedSize = string.length;
+      assert.equal(sizeOfValue(string), expectedSize);
+    });
+    
+    it('unicode string 1', function() {
+      // U+00A9 COPYRIGHT SIGN; see http://codepoints.net/U+00A9
+      let utf16String = '\u00A9';
+      let utf8EncodedString = '\xC2\xA9';
+      let expectedSize = utf8EncodedString.length;
+      assert.equal(sizeOfValue(utf16String), expectedSize);
+    });
+    
+    it('unicode string 2', function() {
+      // U+10001 LINEAR B SYLLABLE B038 E; see http://codepoints.net/U+10001
+      let utf16String = '\uD800\uDC01';
+      let utf8EncodedString = '\xF0\x90\x80\x81';
+      let expectedSize = utf8EncodedString.length;
+      assert.equal(sizeOfValue(utf16String), expectedSize);
     });
   });
 });
