@@ -2,8 +2,8 @@ var dynoItemSize = require('..');
 
 var items = {
   string: { content: 'string', size: 12 },
-  number: { content: 27, size: 10 },
-  buffer: { content: new Buffer('hi', 'utf8'), size: 8 }
+  number: { content: 27, size: 8 },
+  buffer: { content: new Buffer.from('hi', 'utf8'), size: 8 }
 };
 
 describe('should report back item size', function() {

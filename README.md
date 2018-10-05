@@ -40,3 +40,5 @@ This module has been implemented by reading a few resources.
 
 - [Item Size in DdynamoDB from stack overflow](http://stackoverflow.com/questions/8988389/itemsize-in-dynamodb)
 - [Provision Throughput from the AWS DynamoDB docs](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ProvisionedThroughput.html)
+- [Naming Rules and Data Types](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes)
+- [Item Sizes and Capacity Unit Consumption](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/CapacityUnitCalculations.html#ItemSizeCalculations.Reads)
