@@ -24,13 +24,12 @@ var sizeOfValue = module.exports.sizeOfValue = function(v) {
   // Leading and trailing zeroes are trimmed. The size of a number is approximately 
   // (length of attribute name) + (1 byte per two significant digits) + (1 byte).
   else if(typeof v === 'number') {
-    // Convert to string, remove decimal, remove trailing zeros, remove leading zeros
-    var n = v.toString();
-    n = n.replace(/e[+-]\d+$/, '');
-    n = n.replace(/^-/, '');
-    n = n.replace('.', '');
-    n = n.replace(/^0+/, '');
-    n = n.replace(/0+$/, '');
+    var n = v.toString();           // Convert to string
+    n = n.replace(/e[+-]\d+$/, ''); // Remove exponent portion
+    n = n.replace(/^-/, '');        // Remove negative sign
+    n = n.replace('.', '');         // Remove decimal point
+    n = n.replace(/^0+/, '');       // Remove leading zeros
+    n = n.replace(/0+$/, '');       // Remove tailing zeros
     
     var len = n.length;
     len = len > 38 ? 38 : len;
