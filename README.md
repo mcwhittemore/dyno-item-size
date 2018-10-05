@@ -15,7 +15,7 @@ var item = {
 };
 var size = dynoItemSize(item);
 console.log(size);
-// => 31
+// => 32
 ```
 
 ## API
