@@ -24,10 +24,24 @@ var sizeOfValue = module.exports.sizeOfValue = function(v) {
   // Leading and trailing zeroes are trimmed. The size of a number is approximately 
   // (length of attribute name) + (1 byte per two significant digits) + (1 byte).
   else if(typeof v === 'number') {
-    // Convert to binary, remove leading zeros, remove decimal, remove trailing zeros
-    var len = v.toString().replace(/^0\.0*|\.|0+$/g, '').length;
+    // Convert to string, remove decimal, remove trailing zeros, remove leading zeros
+    var n = v.toString();
+    n = n.replace(/e[+-]\d+$/, '');
+    n = n.replace(/^-/, '');
+    n = n.replace('.', '');
+    n = n.replace(/^0+/, '');
+    n = n.replace(/0+$/, '');
+    
+    var len = n.length;
     len = len > 38 ? 38 : len;
     s += Math.ceil(len/2) + 1;
+  }
+  // Binary
+  // A binary value must be encoded in base64 format before it can be sent to 
+  // DynamoDB, but the value's raw byte length is used for calculating size. 
+  // The size of a binary attribute is (length of attribute name) + (number of raw bytes).
+  else if (v instanceof Buffer) {
+    s += v.length;
   }
   // Boolean value
   // The size of a null attribute or a Boolean attribute is (length of attribute name) + (1 byte)
@@ -55,7 +69,7 @@ var sizeOfValue = module.exports.sizeOfValue = function(v) {
     }
   }
   // unknown type
-  else s += v.length;
+  else throw new Error("Unknown Type:", v);
   return s;  
 }
 
