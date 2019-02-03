@@ -1,7 +1,4 @@
 {
-  "dependencies": {
-    "mocha": "^3.1.2"
-  },
   "name": "dyno-item-size",
   "version": "0.3.0",
   "description": "compute the size of an item the same way dynamodb does",
@@ -10,7 +7,7 @@
     "test": "test"
   },
   "devDependencies": {
-    "mocha": "^3.1.2"
+    "mocha": "^5.2.0"
   },
   "scripts": {
     "test": "mocha"
