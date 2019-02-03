@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/jmhummel/dyno-item-size/tree/master.svg?style=svg&circle-token=c3dcad6dd3bbd2347fcc8eaaacbdd4dcb1e030c9)](https://circleci.com/gh/jmhummel/dyno-item-size/tree/master)
+[![CircleCI](https://circleci.com/gh/mcwhittemore/dyno-item-size.svg?style=svg)](https://circleci.com/gh/mcwhittemore/dyno-item-size)
 
 # Dyno Item Size
 
