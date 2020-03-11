@@ -1,6 +1,6 @@
 {
   "name": "dyno-item-size",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "compute the size of an item the same way dynamodb does",
   "main": "index.js",
   "directories": {
